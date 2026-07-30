@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/png" href="Favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cryptographic Evaluation Engine</title>
+    <link rel="icon" type="image/png" sizes="600x600" href="Favicon.png">
     <style>
         :root {
             --bg-deep: #06090e;
@@ -138,6 +138,7 @@
             border: 1px solid var(--border-muted);
             border-radius: 8px;
             padding: 20px;
+            margin-bottom: 20px;
         }
         .panel-title {
             font-size: 11px;
@@ -182,6 +183,14 @@
             font-weight: 500;
             text-align: right;
         }
+        .latency-notice {
+            font-size: 11px;
+            color: #475569;
+            text-align: center;
+            border-top: 1px dashed var(--border-muted);
+            padding-top: 15px;
+            line-height: 1.4;
+        }
     </style>
 </head>
 <body>
@@ -198,7 +207,7 @@
             <div class="system-time">NODE_ONLINE</div>
         </div>
         <div class="input-wrapper">
-            <input type="password" id="passwordInput" placeholder="Enter password to begin audit..." class="password-box">
+            <input type="password" id="passwordInput" placeholder="Enter password to begin audit..." class="password-box" maxlength="64" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false">
             <button id="toggleBtn" class="toggle-btn">👁 Show</button>
         </div>
         <div class="progress-track">
@@ -209,6 +218,9 @@
             <div id="entropyHero" class="entropy-hero">Awaiting Input</div>
             <div id="classification" class="classification">System Idle</div>
             <div id="gridData" class="grid-data" style="display: none;"></div>
+        </div>
+        <div class="latency-notice">
+            Infrastructure Notice: Free-tier cloud instances spin down after inactivity. Initial request sequence can take up to 60 seconds to spin up resources.
         </div>
     </div>
     <script>
@@ -319,4 +331,3 @@
     </script>
 </body>
 </html>
-
