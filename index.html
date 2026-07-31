@@ -340,31 +340,52 @@
    <div class="transparency-container" style="max-width: 850px; margin: 50px auto 25px auto; padding: 30px; background: #0d1117; border: 1px solid #30363d; border-radius: 8px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #c9d1d9; box-sizing: border-box; text-align: left; box-shadow: 0 8px 24px rgba(0,0,0,0.5);">
     
     <h3 style="margin-top: 0; color: #f0f6fc; font-size: 1.3rem; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #21262d; padding-bottom: 12px;">
-        🛡️ Zero-Trust Infrastructure & Governance Disclosure
+        🛡️ Zero-Trust Security Operations Center (SOC) Disclosure
     </h3>
     
     <p style="font-size: 0.9rem; line-height: 1.6; color: #8b949e; margin-bottom: 20px;">
-        This cryptographic engine enforces automated data-minimization perimeters. No credentials or search strings are ever recorded, cached, or compiled into permanent storage.
+        This cryptographic engine enforces automated data-minimization perimeters. The system is hardened using <strong>Defense in Depth</strong> across six distinct structural layers:
     </p>
     
-    <!-- DEFENSIVE CONTROL PROTOCOLS GRID -->
+    <!-- 6-CARD DEFENSIVE CONTROL PROTOCOLS GRID -->
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px; margin-bottom: 30px;">
+        
+        <!-- Card 1: Network In-Transit -->
         <div style="background: #161b22; padding: 15px; border-radius: 6px; border: 1px solid #21262d;">
-            <strong style="color: #58a6ff; display: block; margin-bottom: 5px; font-size: 0.85rem;">📡 TLS 1.3 Encryption Overlays</strong>
-            <span style="font-size: 0.8rem; color: #8b949e; line-height: 1.4; display: block;">All transport lanes are hardened via HTTPS tunnels, shielding data payloads from local network sniffing.</span>
+            <strong style="color: #58a6ff; display: block; margin-bottom: 5px; font-size: 0.85rem;">📡 TLS 1.3 Encryption & Obfuscation</strong>
+            <span style="font-size: 0.8rem; color: #8b949e; line-height: 1.4; display: block;">All transport lanes use HTTPS tunnels, coupled with client-side Base64 encoding to blind internal server traffic logs from plaintext text exposures.</span>
         </div>
+
+        <!-- Card 2: Boundary Sanitization -->
         <div style="background: #161b22; padding: 15px; border-radius: 6px; border: 1px solid #21262d;">
-            <strong style="color: #58a6ff; display: block; margin-bottom: 5px; font-size: 0.85rem;">🔑 k-Anonymity Slicing</strong>
-            <span style="font-size: 0.8rem; color: #8b949e; line-height: 1.4; display: block;">API handshakes utilize an anonymized 5-character prefix slice. Full string hashes never exit local execution scopes.</span>
+            <strong style="color: #58a6ff; display: block; margin-bottom: 5px; font-size: 0.85rem;">🛑 Input Boundary Whitelisting</strong>
+            <span style="font-size: 0.8rem; color: #8b949e; line-height: 1.4; display: block;">Strict matrix character checks instantly block illegal syntax injections, rendering cross-site scripting (XSS) and injection scripts completely inert.</span>
         </div>
+
+        <!-- Card 3: Rate Limiting Firewall -->
         <div style="background: #161b22; padding: 15px; border-radius: 6px; border: 1px solid #21262d;">
-            <strong style="color: #58a6ff; display: block; margin-bottom: 5px; font-size: 0.85rem;">🧮 Hashed Dictionary States</strong>
-            <span style="font-size: 0.8rem; color: #8b949e; line-height: 1.4; display: block;">The local blacklist is loaded purely as one-way SHA-1 tokens on server boot, completely eliminating plaintext variables from rest.</span>
+            <strong style="color: #58a6ff; display: block; margin-bottom: 5px; font-size: 0.85rem;">🧱 Proxy-Aware Rate Limiting</strong>
+            <span style="font-size: 0.8rem; color: #8b949e; line-height: 1.4; display: block;">Flask-Limiter intercepts incoming metadata, parsing the load balancer's X-Forwarded-For header to selectively block automated bot traffic up to 240 requests/min.</span>
         </div>
+
+        <!-- Card 4: Data Minimization on Boot -->
         <div style="background: #161b22; padding: 15px; border-radius: 6px; border: 1px solid #21262d;">
-            <strong style="color: #58a6ff; display: block; margin-bottom: 5px; font-size: 0.85rem;">🗑️ Ephemeral Variable Shredding</strong>
-            <span style="font-size: 0.8rem; color: #8b949e; line-height: 1.4; display: block;">Active processing memory values are explicitly zeroed out and purged from RAM execution blocks within milliseconds.</span>
+            <strong style="color: #58a6ff; display: block; margin-bottom: 5px; font-size: 0.85rem;">🧮 Hashed Blacklist Memory Map</strong>
+            <span style="font-size: 0.8rem; color: #8b949e; line-height: 1.4; display: block;">The local dictionary file compiles into full 40-character SHA-1 mathematical tokens on startup. No plaintext password databases exist at rest.</span>
         </div>
+
+        <!-- Card 5: Ephemeral RAM Scope -->
+        <div style="background: #161b22; padding: 15px; border-radius: 6px; border: 1px solid #21262d;">
+            <strong style="color: #58a6ff; display: block; margin-bottom: 5px; font-size: 0.85rem;">🗑️ Ephemeral Memory Shredding</strong>
+            <span style="font-size: 0.8rem; color: #8b949e; line-height: 1.4; display: block;">Active processing memory values are explicitly zeroed out and purged from RAM execution blocks within milliseconds of calculation completion.</span>
+        </div>
+
+        <!-- Card 6: Forensic Auditing -->
+        <div style="background: #161b22; padding: 15px; border-radius: 6px; border: 1px solid #21262d;">
+            <strong style="color: #58a6ff; display: block; margin-bottom: 5px; font-size: 0.85rem;">📜 Multi-Tier Forensic Log Rotation</strong>
+            <span style="font-size: 0.8rem; color: #8b949e; line-height: 1.4; display: block;">A RotatingFileHandler tracks metrics up to 5MB, logging entropy levels while ensuring plaintext user strings are never committed to disk storage logs.</span>
+        </div>
+
     </div>
 
     <!-- SOURCE AUDIT CENTER -->
@@ -380,7 +401,7 @@
         <a href="https://github.com" target="_blank" style="flex: 1; min-width: 260px; max-width: 380px; display: flex; align-items: center; gap: 15px; padding: 15px; background: #1f242c; border: 1px solid #38444d; border-radius: 6px; text-decoration: none; color: #c9d1d9; transition: transform 0.2s, border-color 0.2s;">
             <div style="font-size: 2rem;">💻</div>
             <div>
-                <strong style="display: block; color: #f0f6fc; font-size: 0.85rem; margin-bottom: 20px;">Frontend Repository</strong>
+                <strong style="display: block; color: #f0f6fc; font-size: 0.85rem; margin-bottom: 5px;">Frontend Repository</strong>
                 <span style="display: inline-block; font-size: 0.75rem; background: #238636; color: #fff; padding: 3px 8px; border-radius: 12px; font-weight: bold;">index.html & UI Engine</span>
             </div>
         </a>
@@ -389,7 +410,7 @@
         <a href="https://github.com" target="_blank" style="flex: 1; min-width: 260px; max-width: 380px; display: flex; align-items: center; gap: 15px; padding: 15px; background: #1f242c; border: 1px solid #38444d; border-radius: 6px; text-decoration: none; color: #c9d1d9; transition: transform 0.2s, border-color 0.2s;">
             <div style="font-size: 2rem;">🐍</div>
             <div>
-                <strong style="display: block; color: #f0f6fc; font-size: 0.85rem; margin-bottom: 20px;">Backend Microservice</strong>
+                <strong style="display: block; color: #f0f6fc; font-size: 0.85rem; margin-bottom: 5px;">Backend Microservice</strong>
                 <span style="display: inline-block; font-size: 0.75rem; background: #2188ff; color: #fff; padding: 3px 8px; border-radius: 12px; font-weight: bold;">app.py & Firewall Router</span>
             </div>
         </a>
@@ -400,16 +421,15 @@
 <!-- SYSTEM LEGAL & COMPLIANCE FOOTER -->
 <footer style="max-width: 850px; margin: 0 auto 30px auto; padding-top: 15px; border-top: 1px solid #21262d; font-family: -apple-system, BlinkMacSystemFont, sans-serif; text-align: center; color: #484f58; font-size: 0.7rem; line-height: 1.6;">
     <p style="margin: 0 0 8px 0; color: #8b949e;">
-        ⚙️ Architectural Specifications: <span style="color: #c9d1d9;">NIST SHA-1 Standards</span> | <span style="color: #c9d1d9;">zxcvbn Heuristic Framework</span> | <span style="color: #c9d1d9;">Proxy load-balancing layer mitigation</span>
+        ⚙️ Architectural Specifications: <span style="color: #c9d1d9;">NIST SHA-1 Standards</span> | <span style="color: #c9d1d9;">zxcvbn Heuristic Framework</span> | <span style="color: #c9d1d9;">k-Anonymity Cloud Query Pipeline</span>
     </p>
     <p style="margin: 0 0 8px 0; font-style: italic; max-width: 650px; margin-left: auto; margin-right: auto;">
         Disclaimer: This platform functions purely as an educational evaluation ecosystem. No structural text arrays, encryption parameters, or network payloads are permanently recorded or logged.
     </p>
     <p style="margin: 0; font-weight: bold; color: #8b949e;">
-        &copy; 2026 Thomas D Manning. All Rights Reserved. 
+        &copy; 2026 Thomas Manning. All Rights Reserved. UTSA Cyber Security Engineering.
     </p>
 </footer>
-
 
 </body>
 </html>
