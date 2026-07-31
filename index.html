@@ -230,7 +230,7 @@
     </div>
     <script>
         console.log(
-            "%c🛡️ Cryptographic Evaluation Engine Live %c\nOwner/Author: Thomas D. Manning (UTSA 2026)", 
+            "%c🛡️ Cryptographic Evaluation Engine Live %c\nOwner/Author: Thomas D. Manning (2026)", 
             "color: #58a6ff; font-weight: bold; font-size: 1.2rem;", 
             "color: #8b949e; font-size: 0.9rem;"
         );
@@ -328,7 +328,20 @@
                             <div class="grid-row"><span class="row-label">Active Pool Space</span><span class="row-value">${data.pool_size} choices [${data.pool_used}]</span></div>
                             <div class="grid-row"><span class="row-label">Patterns Flagged</span><span class="row-value">${data.patterns_flagged}</span></div>
                             <div class="grid-row"><span class="row-label">Total Combinations</span><span class="row-value">${data.combinations}</span></div>
-                            <div class="grid-row"><span class="row-label">Brute-Force Window</span><span class="row-value" style="color: ${targetColor}">${data.crack_time}</span></div>
+                            <div class="grid-row" style="flex-direction: column; align-items: flex-start; gap: 8px; width: 100%;">
+                                <div style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
+                                    <span class="row-label">Brute-Force Vector</span>
+                                        <!-- THREAT VECTOR SELECTION DROPDOWN -->
+                                        <select id="vectorSelect" style="background: #161b22; color: #c9d1d9; border: 1px solid #30363d; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-family: sans-serif; cursor: pointer; outline: none;">
+                                            <option value="fast">Offline Fast Hash (GPU)</option>
+                                            <option value="slow">Offline Slow Hash (Bcrypt)</option>
+                                            <option value="online">Online Portal (No FW)</option>
+                                            <option value="throttled">Online Portal (Throttled)</option>
+                                    </select>
+                                </div>
+                                <span id="crackTimeDisplay" class="row-value" style="color: ${targetColor}; text-align: left; font-size: 1rem; font-weight: bold;">${data.crack_time}</span>
+                            </div>
+
                         `;
                         gridData.style.display = "flex";
                     }
