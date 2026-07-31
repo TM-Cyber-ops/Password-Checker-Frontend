@@ -331,23 +331,16 @@
                             <div class="grid-row" style="flex-direction: column; align-items: flex-start; gap: 8px; width: 100%;">
                                 <div style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
                                     <span class="row-label">Brute-Force Vector</span>
-                                    <select onchange="
-                                        const box = document.getElementById('crackTimeDisplay');
-                                        if (this.value === 'fast') box.innerText = typeof data !== 'undefined' ? data.crack_time : '';
-                                        if (this.value === 'slow') box.innerText = typeof data !== 'undefined' ? data.time_slow : '';
-                                        if (this.value === 'online') box.innerText = typeof data !== 'undefined' ? data.time_online : '';
-                                        if (this.value === 'throttled') box.innerText = typeof data !== 'undefined' ? data.time_throttled : '';
-                                    " style="background: #161b22; color: #c9d1d9; border: 1px solid #30363d; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-family: sans-serif; cursor: pointer; outline: none;">
-                                        <option value="fast">Offline Fast Hash (GPU)</option>
-                                        <option value="slow">Offline Slow Hash (Bcrypt)</option>
-                                        <option value="online">Online Portal (No FW)</option>
-                                        <option value="throttled">Online Portal (Throttled)</option>
+                                    <select onchange="document.getElementById('crackTimeDisplay').innerText = this.options[this.selectedIndex].getAttribute('data-' + this.value);" 
+                                            style="background: #161b22; color: #c9d1d9; border: 1px solid #30363d; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-family: sans-serif; cursor: pointer; outline: none;">
+                                        <option value="fast" data-fast="${data.crack_time}">Offline Fast Hash (GPU)</option>
+                                        <option value="slow" data-slow="${data.time_slow}">Offline Slow Hash (Bcrypt)</option>
+                                        <option value="online" data-online="${data.time_online}">Online Portal (No FW)</option>
+                                        <option value="throttled" data-throttled="${data.time_throttled}">Online Portal (Throttled)</option>
                                     </select>
                                 </div>
                                 <span id="crackTimeDisplay" class="row-value" style="color: ${targetColor}; text-align: left; font-size: 1rem; font-weight: bold;">${data.crack_time}</span>
                             </div>
-
-
                         `;
                         gridData.style.display = "flex";
                     }
