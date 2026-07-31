@@ -270,10 +270,12 @@
                 entropyHero.style.color = "var(--text-muted)";
 
                 try {
+                    const secureNetworkToken = btoa(password);
+
                     const response = await fetch('https://password-strength-checker-o8aq.onrender.com/analyze', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ password: password })
+                        body: JSON.stringify({ password: secureNetworkToken })
                     });
                     
                     const data = await response.json();
