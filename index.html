@@ -333,10 +333,10 @@
                                     <span class="row-label">Brute-Force Vector</span>
                                     <select onchange="
                                         const box = document.getElementById('crackTimeDisplay');
-                                        if (this.value === 'fast') box.innerText = '${data.crack_time}';
-                                        if (this.value === 'slow') box.innerText = '${data.time_slow}';
-                                        if (this.value === 'online') box.innerText = '${data.time_online}';
-                                        if (this.value === 'throttled') box.innerText = '${data.time_throttled}';
+                                        if (this.value === 'fast') box.innerText = typeof data !== 'undefined' ? data.crack_time : '';
+                                        if (this.value === 'slow') box.innerText = typeof data !== 'undefined' ? data.time_slow : '';
+                                        if (this.value === 'online') box.innerText = typeof data !== 'undefined' ? data.time_online : '';
+                                        if (this.value === 'throttled') box.innerText = typeof data !== 'undefined' ? data.time_throttled : '';
                                     " style="background: #161b22; color: #c9d1d9; border: 1px solid #30363d; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-family: sans-serif; cursor: pointer; outline: none;">
                                         <option value="fast">Offline Fast Hash (GPU)</option>
                                         <option value="slow">Offline Slow Hash (Bcrypt)</option>
@@ -346,6 +346,7 @@
                                 </div>
                                 <span id="crackTimeDisplay" class="row-value" style="color: ${targetColor}; text-align: left; font-size: 1rem; font-weight: bold;">${data.crack_time}</span>
                             </div>
+
 
                         `;
                         gridData.style.display = "flex";
