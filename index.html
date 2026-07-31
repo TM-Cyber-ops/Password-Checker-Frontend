@@ -339,9 +339,9 @@
                                     </select>
                                 </div>
                                 <span id="crackTimeDisplay" class="row-value" style="color: ${targetColor}; text-align: left; font-size: 1rem; font-weight: bold; width: 100%; display: block;">
-                                    ${document.getElementById('vectorSelector') && document.getElementById('vectorSelector').value === 'slow' ? data.time_offline_slow : 
-                                      document.getElementById('vectorSelector') && document.getElementById('vectorSelector').value === 'online' ? data.time_online_unthrottled : 
-                                      document.getElementById('vectorSelector') && document.getElementById('vectorSelector').value === 'throttled' ? data.time_online_throttled : data.crack_time}
+                                    ${document.getElementById('vectorSelector') && document.getElementById('vectorSelector').value === data.time_offline_slow ? data.time_offline_slow : 
+                                      document.getElementById('vectorSelector') && document.getElementById('vectorSelector').value === data.time_online_unthrottled ? data.time_online_unthrottled : 
+                                      document.getElementById('vectorSelector') && document.getElementById('vectorSelector').value === data.time_online_throttled ? data.time_online_throttled : data.crack_time}
                                 </span>
                             </div>
                         `;
