@@ -385,19 +385,19 @@
         
         <!-- Card 1: Network In-Transit -->
         <div style="background: #161b22; padding: 15px; border-radius: 6px; border: 1px solid #21262d;">
-            <strong style="color: #58a6ff; display: block; margin-bottom: 5px; font-size: 0.85rem;">📡 TLS 1.3 Encryption & Obfuscation</strong>
+            <strong style="color: #58a6ff; display: block; margin-bottom: 5px; font-size: 0.85rem;">📡 TLS 1.3 Encryption & Data Encoding</strong>
             <span style="font-size: 0.8rem; color: #8b949e; line-height: 1.4; display: block;">All transport lanes use secure HTTPS tunnels to encrypt traffic in transit. Inputs are Base64-encoded on the client side to safely handle special characters during transmission.</span>
         </div>
  
         <!-- Card 2: Boundary Sanitization -->
         <div style="background: #161b22; padding: 15px; border-radius: 6px; border: 1px solid #21262d;">
-            <strong style="color: #58a6ff; display: block; margin-bottom: 5px; font-size: 0.85rem;">🛑 NIST SP 800-63B Sanitization</strong>
+            <strong style="color: #58a6ff; display: block; margin-bottom: 5px; font-size: 0.85rem;">🛑 NIST SP 800-63B Input Sanitization</strong>
             <span style="font-size: 0.8rem; color: #8b949e; line-height: 1.4; display: block;">Our input validation strictly aligns with NIST guidelines. It permits all 33 printable ASCII symbols and spaces while protecting the runtime boundary against injection attacks.</span>
         </div>
 
         <!-- Card 3: Rate Limiting Firewall -->
         <div style="background: #161b22; padding: 15px; border-radius: 6px; border: 1px solid #21262d;">
-            <strong style="color: #58a6ff; display: block; margin-bottom: 5px; font-size: 0.85rem;">🧱 Proxy-Aware Rate Limiting</strong>
+            <strong style="color: #58a6ff; display: block; margin-bottom: 5px; font-size: 0.85rem;">🧱  Rate Limiting & Bot Protection</strong>
             <span style="font-size: 0.8rem; color: #8b949e; line-height: 1.4; display: block;">A Flask-Limiter intercepts incoming metadata and parses the load balancer's X-Forwarded-For header. This automatically blocks automated bot traffic above 240 requests/minute.</span>
         </div>
 
@@ -415,7 +415,7 @@
 
         <!-- Card 6: Forensic Auditing -->
         <div style="background: #161b22; padding: 15px; border-radius: 6px; border: 1px solid #21262d;">
-            <strong style="color: #58a6ff; display: block; margin-bottom: 5px; font-size: 0.85rem;">📜 Multi-Tier Forensic Log Rotation</strong>
+            <strong style="color: #58a6ff; display: block; margin-bottom: 5px; font-size: 0.85rem;">📜 Secure Forensic Log Rotation</strong>
             <span style="font-size: 0.8rem; color: #8b949e; line-height: 1.4; display: block;">A standard Python RotatingFileHandler tracks system metrics up to 5MB. It logs general entropy levels but ensures that plaintext user passwords are never written to disk.</span>
         </div>
 
