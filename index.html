@@ -386,37 +386,37 @@
         <!-- Card 1: Network In-Transit -->
         <div style="background: #161b22; padding: 15px; border-radius: 6px; border: 1px solid #21262d;">
             <strong style="color: #58a6ff; display: block; margin-bottom: 5px; font-size: 0.85rem;">📡 TLS 1.3 Encryption & Obfuscation</strong>
-            <span style="font-size: 0.8rem; color: #8b949e; line-height: 1.4; display: block;">All transport lanes use HTTPS tunnels, coupled with client-side Base64 encoding, allowing standard secured travel along with blind internal server logs protecting from plaintext text exposures.</span>
+            <span style="font-size: 0.8rem; color: #8b949e; line-height: 1.4; display: block;">All transport lanes use secure HTTPS tunnels to encrypt traffic in transit. Inputs are Base64-encoded on the client side to safely handle special characters during transmission.</span>
         </div>
  
         <!-- Card 2: Boundary Sanitization -->
         <div style="background: #161b22; padding: 15px; border-radius: 6px; border: 1px solid #21262d;">
             <strong style="color: #58a6ff; display: block; margin-bottom: 5px; font-size: 0.85rem;">🛑 NIST SP 800-63B Sanitization</strong>
-            <span style="font-size: 0.8rem; color: #8b949e; line-height: 1.4; display: block;">Our input perimeter strictly aligns with NIST guidelines, permitting all 33 printable ASCII special symbols and spaces while safely maintaining total injection immunity at the runtime boundary.</span>
+            <span style="font-size: 0.8rem; color: #8b949e; line-height: 1.4; display: block;">Our input validation strictly aligns with NIST guidelines. It permits all 33 printable ASCII symbols and spaces while protecting the runtime boundary against injection attacks.</span>
         </div>
 
         <!-- Card 3: Rate Limiting Firewall -->
         <div style="background: #161b22; padding: 15px; border-radius: 6px; border: 1px solid #21262d;">
             <strong style="color: #58a6ff; display: block; margin-bottom: 5px; font-size: 0.85rem;">🧱 Proxy-Aware Rate Limiting</strong>
-            <span style="font-size: 0.8rem; color: #8b949e; line-height: 1.4; display: block;">Flask-Limiter intercepts incoming metadata, parsing the load balancer's X-Forwarded-For header to selectively block automated bot traffic up to 240 requests/min.</span>
+            <span style="font-size: 0.8rem; color: #8b949e; line-height: 1.4; display: block;">A Flask-Limiter intercepts incoming metadata and parses the load balancer's X-Forwarded-For header. This automatically blocks automated bot traffic above 240 requests/minute.</span>
         </div>
 
         <!-- Card 4: Data Minimization on Boot -->
         <div style="background: #161b22; padding: 15px; border-radius: 6px; border: 1px solid #21262d;">
             <strong style="color: #58a6ff; display: block; margin-bottom: 5px; font-size: 0.85rem;">🧮 Hashed Blacklist Memory Map</strong>
-            <span style="font-size: 0.8rem; color: #8b949e; line-height: 1.4; display: block;">The local dictionary file compiles into full 40-character SHA-1 mathematical tokens on startup. No plaintext password databases exist at rest.</span>
+            <span style="font-size: 0.8rem; color: #8b949e; line-height: 1.4; display: block;">The local password blacklist is converted into 40-character SHA-1 hashes upon system startup. No plaintext password databases or lists are ever stored at rest.</span>
         </div>
 
         <!-- Card 5: Ephemeral RAM Scope -->
         <div style="background: #161b22; padding: 15px; border-radius: 6px; border: 1px solid #21262d;">
             <strong style="color: #58a6ff; display: block; margin-bottom: 5px; font-size: 0.85rem;">🗑️ Ephemeral Memory Shredding</strong>
-            <span style="font-size: 0.8rem; color: #8b949e; line-height: 1.4; display: block;">Active processing memory values are explicitly zeroed out and purged from RAM execution blocks immediately after calculation completion.</span>
+            <span style="font-size: 0.8rem; color: #8b949e; line-height: 1.4; display: block;">To prevent memory-scraping attacks, active variables and password strings are explicitly zeroed out and purged from RAM immediately after the strength calculation is complete.</span>
         </div>
 
         <!-- Card 6: Forensic Auditing -->
         <div style="background: #161b22; padding: 15px; border-radius: 6px; border: 1px solid #21262d;">
             <strong style="color: #58a6ff; display: block; margin-bottom: 5px; font-size: 0.85rem;">📜 Multi-Tier Forensic Log Rotation</strong>
-            <span style="font-size: 0.8rem; color: #8b949e; line-height: 1.4; display: block;">A RotatingFileHandler tracks metrics up to 5MB, logging entropy levels while ensuring plaintext user strings are never committed to disk storage logs.</span>
+            <span style="font-size: 0.8rem; color: #8b949e; line-height: 1.4; display: block;">A standard Python RotatingFileHandler tracks system metrics up to 5MB. It logs general entropy levels but ensures that plaintext user passwords are never written to disk.</span>
         </div>
 
     </div>
