@@ -1,0 +1,14 @@
+name: Weekly Cloud Container Purge
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'
+  workflow_dispatch:
+
+jobs:
+  trigger-redeploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Render Container Flush
+        run: |
+          curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}"
