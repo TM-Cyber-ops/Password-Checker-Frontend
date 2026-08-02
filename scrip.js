@@ -1,5 +1,5 @@
  console.log(
-            "%c🛡️ Cryptographic Evaluation Engine Live %c\nOwner/Author: Thomas D. Manning (2026)", 
+            "%c🛡️ Cryptographic Evaluation Engine Live %c\nOwner/Author: TM-Cyber-ops (2026)", 
             "color: #58a6ff; font-weight: bold; font-size: 1.2rem;", 
             "color: #8b949e; font-size: 0.9rem;"
         );
