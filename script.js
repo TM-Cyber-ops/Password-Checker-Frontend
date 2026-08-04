@@ -12,15 +12,17 @@
         const mainContainer = document.getElementById('mainContainer');
         let debounceTimer;
 
+        
         toggleBtn.addEventListener('click', () => {
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text';
+            if (passwordInput.style.webkitTextSecurity === 'disc') { 
                 toggleBtn.innerText = '👁 Hide';
             } else {
-                passwordInput.type = 'password';
+                passwordInput.style.webkitTextSecurity = 'disc';
                 toggleBtn.innerText = '👁 Show';
             }
         });
+
+
 
         passwordInput.addEventListener('input', () => {
             const activeSelector = document.getElementById('vectorSelector');
