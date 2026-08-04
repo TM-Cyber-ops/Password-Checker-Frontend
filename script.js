@@ -12,16 +12,16 @@
         const mainContainer = document.getElementById('mainContainer');
         let debounceTimer;
 
-        
+
         toggleBtn.addEventListener('click', () => {
-            if (passwordInput.style.webkitTextSecurity === 'disc') { 
+            if (passwordInput.style.webkitTextSecurity === 'disc') {
+                passwordInput.style.webkitTextSecurity = 'none';
                 toggleBtn.innerText = '👁 Hide';
             } else {
                 passwordInput.style.webkitTextSecurity = 'disc';
                 toggleBtn.innerText = '👁 Show';
             }
         });
-
 
 
         passwordInput.addEventListener('input', () => {
