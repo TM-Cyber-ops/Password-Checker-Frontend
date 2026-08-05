@@ -111,7 +111,7 @@
                                 <div style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
                                     <span class="row-label">Brute-Force Vector</span>
                                     <select id="vectorSelector" 
-                                            onchange="document.getElementById('crackTimeDisplay').innerText = this.value;"             
+                                            style="background: #161b22; color: #c9d1d9; border: 1px solid #30363d; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-family: sans-serif; cursor: pointer; outline: none;">             
                                         <option value="${data.crack_time}" ${window.currentVector === 'fast' || !window.currentVector ? 'selected' : ''}>Offline Fast Hash (GPU)</option>
                                         <option value="${data.time_offline_slow}" ${window.currentVector === 'slow' ? 'selected' : ''}>Offline Slow Hash (Bcrypt)</option>
                                         <option value="${data.time_online_unthrottled}" ${window.currentVector === 'online' ? 'selected' : ''}>Online Portal (No FW)</option>
