@@ -111,24 +111,31 @@
                                 <div style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
                                     <span class="row-label">Brute-Force Vector</span>
                                     <select id="vectorSelector" 
-                                            onchange="document.getElementById('crackTimeDisplay').innerText = this.value;" 
-                                            style="background: #161b22; color: #c9d1d9; border: 1px solid #30363d; border-radius: 4px; padding: 2px 6px; font-size: 0.75rem; font-family: sans-serif; cursor: pointer; outline: none;">
-            
+                                            onchange="document.getElementById('crackTimeDisplay').innerText = this.value;"             
                                         <option value="${data.crack_time}" ${window.currentVector === 'fast' || !window.currentVector ? 'selected' : ''}>Offline Fast Hash (GPU)</option>
                                         <option value="${data.time_offline_slow}" ${window.currentVector === 'slow' ? 'selected' : ''}>Offline Slow Hash (Bcrypt)</option>
                                         <option value="${data.time_online_unthrottled}" ${window.currentVector === 'online' ? 'selected' : ''}>Online Portal (No FW)</option>
                                         <option value="${data.time_online_throttled}" ${window.currentVector === 'throttled' ? 'selected' : ''}>Online Portal (Throttled)</option>
                                     </select>
                                 </div>
-    
                                 <span id="crackTimeDisplay" class="row-value" style="color: ${targetColor}; text-align: left; font-size: 1rem; font-weight: bold; width: 100%; display: block;">
                                     ${window.currentVector === 'slow' ? data.time_offline_slow : 
                                       window.currentVector === 'online' ? data.time_online_unthrottled : 
                                       window.currentVector === 'throttled' ? data.time_online_throttled : data.crack_time}
                                 </span>
                             </div>
-
                         `;
+                        const vectorSelector = document.getElementById('vectorSelector');
+                        if (vectorSelector) {
+                            vectorSelector.addEventListener('change', function() {
+                                        if (this.selectedIndex === 0) window.currentVector = 'fast';
+                                        else if (this.selectedIndex === 1) window.currentVector = 'slow';
+                                        else if (this.selectedIndex === 2) window.currentVector = 'online';
+                                        else if (this.selectedIndex === 3) window.currentVector = 'throttled';
+                                        document.getElementById('crackTimeDisplay').innerText = this.value;
+                            });
+                        }
+                        
                         gridData.style.display = "flex";
                     }
                 } catch (error) {
