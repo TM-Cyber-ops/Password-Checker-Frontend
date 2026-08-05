@@ -125,16 +125,21 @@
                                 </span>
                             </div>
                         `;
-                        const vectorSelector = document.getElementById('vectorSelector');
-                        if (vectorSelector) {
-                            vectorSelector.addEventListener('change', function() {
-                                        if (this.selectedIndex === 0) window.currentVector = 'fast';
-                                        else if (this.selectedIndex === 1) window.currentVector = 'slow';
-                                        else if (this.selectedIndex === 2) window.currentVector = 'online';
-                                        else if (this.selectedIndex === 3) window.currentVector = 'throttled';
-                                        document.getElementById('crackTimeDisplay').innerText = this.value;
-                            });
-                        }
+                        document.addEventListener('change', function(event) {
+                            if (event.target && event.target.id === 'vectorSelector') {
+                                const selector = event.target;
+        
+                                if (selector.selectedIndex === 0) window.currentVector = 'fast';
+                                else if (selector.selectedIndex === 1) window.currentVector = 'slow';
+                                else if (selector.selectedIndex === 2) window.currentVector = 'online';
+                                else if (selector.selectedIndex === 3) window.currentVector = 'throttled';
+
+                                const displayCard = document.getElementById('crackTimeDisplay');
+                                if (displayCard) {
+                                    displayCard.innerText = selector.value;
+                                }
+                            }
+                        });
                         
                         gridData.style.display = "flex";
                     }
