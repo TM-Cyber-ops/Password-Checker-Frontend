@@ -227,7 +227,7 @@
             <div id="gridData" class="grid-data" style="display: none;"></div>
         </div>
         <div class="latency-notice">
-            Cloud instance shuts down after inactivity. Initial request can take up to 60 seconds to spin up resources.
+            Cloud instance shuts down after inactivity to insure full data wipe. Initial request can take up to 60 seconds to spin up resources.
         </div>
     </div>
     
@@ -273,7 +273,8 @@
         <!-- Card 5: Ephemeral RAM Scope -->
         <div style="background: #161b22; padding: 15px; border-radius: 6px; border: 1px solid #21262d;">
             <strong style="color: #58a6ff; display: block; margin-bottom: 5px; font-size: 0.85rem;">🗑️ Ephemeral Memory Shredding</strong>
-            <span style="font-size: 0.8rem; color: #8b949e; line-height: 1.4; display: block;">To prevent memory-scraping attacks, active variables and password strings are explicitly zeroed out and purged from RAM immediately after the strength calculation is complete.</span>
+            <span style="font-size: 0.8rem; color: #8b949e; line-height: 1.4; display: block;">Raw data is handled via low-level mutable bytearrays. An automated framework teardown hook intercepts every request and forcefully overwrites the physical server RAM slots with absolute zero bits, completely shredding the physical data footprint.
+</span>
         </div>
 
         <!-- Card 6: Forensic Auditing -->
