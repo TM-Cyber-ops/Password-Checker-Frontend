@@ -1,4 +1,14 @@
- console.log(
+function generateAnonymousToken() {
+    const array = new Uint8Array(8);
+    window.crypto.getRandomValues(array);
+    return Array.from(array, byte => byte.toString(16).padStart(2, '0')).join('');
+}
+if (!sessionStorage.getItem('anonymous_rate_token')) {
+    sessionStorage.setItem('anonymous_rate_token', generateAnonymousToken());
+}
+const activeSessionToken = sessionStorage.getItem('anonymous_rate_token');
+
+console.log(
             "%c🛡️ Cryptographic Evaluation Engine Live %c\nOwner/Author: TM-Cyber-ops (2026)", 
             "color: #58a6ff; font-weight: bold; font-size: 1.2rem;", 
             "color: #8b949e; font-size: 0.9rem;"
@@ -61,7 +71,7 @@
 
                     const response = await fetch('https://password-strength-checker-o8aq.onrender.com/analyze', {
                         method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
+                        headers: { 'Content-Type': 'application/json', "X-Session-Token": activeSessionToken },
                         body: JSON.stringify({ password: secureNetworkToken })
                     });
                     
