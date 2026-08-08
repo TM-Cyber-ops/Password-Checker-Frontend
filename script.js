@@ -35,6 +35,9 @@
             }
             clearTimeout(debounceTimer);
             const password = passwordInput.value;
+            if (password.trim() === "") {
+                return
+            }
 
             if (!password) {
                 entropyHero.innerText = "Awaiting Input";
