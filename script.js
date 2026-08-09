@@ -46,10 +46,6 @@ console.log(
             clearTimeout(debounceTimer);
             const password = passwordInput.value;
             if (password.trim() === "") {
-                return
-            }
-
-            if (!password) {
                 entropyHero.innerText = "Awaiting Input";
                 entropyHero.style.color = "var(--text-muted)";
                 classification.innerText = "System Idle";
