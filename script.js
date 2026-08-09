@@ -72,6 +72,7 @@ console.log(
                     });
                     
                     const data = await response.json();
+                    if (passwordInput.value.trim() === "") return;
 
                     if (data.status === "rejected" || data.status === "pwned") {
                         entropyHero.innerText = data.message;
